@@ -193,19 +193,6 @@ class SBI_ATM(SBI_BANK):
                             print(" Insufficiant balance !")
         except Error as e:
             print(e)
-        # try:
-        #     self.enter_pin()
-        #     if self.pin == self.pin_code:
-        #         self.enter_amount()
-        #         if self.balance > self.amount and self.balance > 100:
-        #             self.balance -= self.amount
-        #             print(f" Successfully Withdraw : ${self.amount}.00")
-        #         else:
-        #             print(" Insufficiant balance !")
-        #     else:
-        #         print(" Invalid Pin Code !")
-        # except ValueError as e:
-        #     print(e
 
 
 if __name__ == "__main__":
@@ -234,16 +221,23 @@ if __name__ == "__main__":
                         while True:
                             sbibnk.display()
                             chose = int(input())
-                            match chose:
-                                case 1:
-                                    sbibnk.deposite_amount()
-                                case 2:
-                                    sbibnk.withdraw_amount()
+                            if chose == 1:
+                                sbibnk.deposite_amount()
+                            elif chose == 3:
+                                sbibnk.withdraw_amount()
+                            elif chose == 4:
+                                sbibnk.inqury_balannc()
+                            else:
+                                break
+                                # case 1:
+                                #     sbibnk.deposite_amount()
+                                # case 2:
+                                #     sbibnk.withdraw_amount()
 
-                                case 3:
-                                    sbibnk.inqury_balannc()
-                                case 4:
-                                    break
+                                # case 3:
+                                #     sbibnk.inqury_balannc()
+                                # case 4:
+                                #     break
                 else:
                     print(" WWrong Pincode !")
         except Error as e:
